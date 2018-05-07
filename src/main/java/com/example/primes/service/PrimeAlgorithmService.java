@@ -1,7 +1,7 @@
 package com.example.primes.service;
 
 import com.example.primes.algo.PrimeAlgorithm;
-import com.example.primes.algo.impl.BruceForce;
+import com.example.primes.algo.impl.BruteForce;
 import com.example.primes.algo.impl.SieveOfEratosthenes;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ public class PrimeAlgorithmService {
     @PostConstruct
     public void init() {
         addAlgorithm((new SieveOfEratosthenes()));
-        addAlgorithm(new BruceForce());
+        addAlgorithm(new BruteForce());
     }
 
     public PrimeAlgorithm getAlgorithm(String name) {

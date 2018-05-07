@@ -25,6 +25,8 @@ public class PrimesController {
     public PrimeResponse getPrimeNumbers(@PathVariable(value = "upperLimit", required = true) final int upperLimit,
                                          @RequestParam(value = "algorithm", required = true) final String algorithm) {
 
+        //TODO: validate upper limit number
+
         log.info("Received request to generate prime numbers up to {}, using algorithm {}", upperLimit, algorithm);
 
         final PrimeAlgorithm primeAlgorithm = getAlgorithm(algorithm);

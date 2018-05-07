@@ -9,7 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PrimeResponse {
 
-    private Integer limit;
+    private Integer initial;
 
-    private List<Integer> primeList;
+    private List<Integer> primes;
 }
