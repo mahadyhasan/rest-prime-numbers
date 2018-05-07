@@ -1,7 +1,7 @@
 package com.example.primes.controller;
 
 import com.example.primes.algo.PrimeAlgorithm;
-import com.example.primes.algo.domain.PrimeResponse;
+import com.example.primes.domain.PrimeResponse;
 import com.example.primes.exception.InvalidParameterException;
 import com.example.primes.service.PrimeAlgorithmService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,12 +21,13 @@ public class PrimesController {
 
 
     @RequestMapping(value = "/{upperLimit}", method = RequestMethod.GET)
-    public PrimeResponse getPrimeNumbers(@PathVariable(value = "upperLimit") final int upperLimit,
-                                         @RequestParam(value = "algorithm") final String algorithm) {
+    @ResponseBody
+    public PrimeResponse getPrimeNumbers(@PathVariable(value = "upperLimit", required = true) final int upperLimit,
+                                         @RequestParam(value = "algorithm", required = true) final String algorithm) {
 
         log.info("Received request to generate prime numbers up to {}, using algorithm {}", upperLimit, algorithm);
 
-        PrimeAlgorithm primeAlgorithm = getAlgorithm(algorithm);
+        final PrimeAlgorithm primeAlgorithm = getAlgorithm(algorithm);
 
         return new PrimeResponse(upperLimit, primeAlgorithm.getAllPrimes(upperLimit));
 

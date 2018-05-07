@@ -1,4 +1,4 @@
-package com.example.primes.algo.domain;
+package com.example.primes.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
