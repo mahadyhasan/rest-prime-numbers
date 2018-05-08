@@ -1,17 +1,23 @@
 package com.example.primes.algo.impl;
 
 import com.example.primes.algo.PrimeAlgorithm;
+import com.example.primes.exception.InvalidParameterException;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class BruteForce extends PrimeAlgorithm {
 
-    private static final String ALGO_NAME = "BruteForce";
+    public static final String ALGO_NAME = "BruteForce";
 
 
     @Override
     protected List<Integer> calculateTill(int limit) {
+
+        if (limit < 0) {
+            throw new InvalidParameterException("Upper limit number cannot be less than 0");
+        }
+
         List<Integer> primeNumbers = new LinkedList<>();
 
         for (int i = 1; i <= limit; i++) {

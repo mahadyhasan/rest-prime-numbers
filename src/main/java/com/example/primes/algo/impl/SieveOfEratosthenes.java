@@ -1,6 +1,7 @@
 package com.example.primes.algo.impl;
 
 import com.example.primes.algo.PrimeAlgorithm;
+import com.example.primes.exception.InvalidParameterException;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class SieveOfEratosthenes extends PrimeAlgorithm {
 
-    private static final String ALGO_NAME = "SieveOfEratosthenes";
+    public static final String ALGO_NAME = "SieveOfEratosthenes";
 
 
     /**
@@ -23,7 +24,12 @@ public class SieveOfEratosthenes extends PrimeAlgorithm {
      * @return list of prime numbers
      */
     @Override
-    protected List<Integer> calculateTill(int limit) {
+    protected List<Integer> calculateTill(int limit) { //11
+
+        if (limit < 0) {
+            throw new InvalidParameterException("Upper limit number cannot be less than 0");
+        }
+
         boolean prime[] = new boolean[limit + 1];
         Arrays.fill(prime, true);
         for (int p = 2; p * p <= limit; p++) {

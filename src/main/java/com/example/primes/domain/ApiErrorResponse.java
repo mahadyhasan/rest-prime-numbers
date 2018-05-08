@@ -14,6 +14,7 @@ public class ApiErrorResponse {
     private String detail;
 
 
+
     public static final class ApiErrorResponseBuilder {
         private HttpStatus status;
         private String error_code;
