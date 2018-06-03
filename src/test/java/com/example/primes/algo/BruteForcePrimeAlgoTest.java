@@ -1,6 +1,5 @@
 package com.example.primes.algo;
 
-import com.example.primes.algo.impl.BruteForce;
 import org.junit.Before;
 
 public class BruteForcePrimeAlgoTest extends AbstractPrimeAlgoTest {

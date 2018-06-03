@@ -2,14 +2,17 @@ package com.example.primes.algo;
 
 import java.util.List;
 
-public abstract class PrimeAlgorithm {
+public interface PrimeAlgorithm {
 
-    public List<Integer> getAllPrimes(int limit) {
-        List<Integer> primeNumbers = calculateTill(limit);
-        return primeNumbers;
+    List<Long> generatePrimes();
+
+    Long getUpperLimit();
+
+    enum PrimesStrategy {
+        FORK_JOIN,
+        BRUTE_FORCE,
+        PARALLEL_STREAM,
+        STREAM,
+        ERATOSTHENES_SIEVE
     }
-
-    protected abstract List<Integer> calculateTill(int limit);
-
-    public abstract String getName();
 }

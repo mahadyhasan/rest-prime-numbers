@@ -1,6 +1,5 @@
 package com.example.primes.algo;
 
-import com.example.primes.algo.impl.SieveOfEratosthenes;
 import org.junit.Before;
 
 public class SieveOfEratosthenesPrimeAlgoTest extends AbstractPrimeAlgoTest {
